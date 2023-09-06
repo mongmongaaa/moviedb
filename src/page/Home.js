@@ -46,7 +46,7 @@ function Home() {
       <div id="content">
         <article>
           <h2>Trending Movies <span>
-            <Link to="/MovieLis">view more</Link>
+            <Link to="/MovieList">view more</Link>
           </span></h2>
           <Swiper spaceBetween={50} slidesPerView={7}>
             {popularMovies.map((popularMovies) => (
@@ -66,18 +66,20 @@ function Home() {
 
         <article>
           <h2>Top Rated Movies<span>
-            <Link to="/MovieLis">view more</Link>
+            <Link to="/MovieList">view more</Link>
           </span></h2>
           
           <Swiper spaceBetween={50} slidesPerView={7}>
             {topMovies.map((topMovies) => (
               <SwiperSlide key={popularMovies.id}>
+                <Link to={`/Detail/movie2/${topMovies.id}`}>
                 <figure>
                   <img
                     src={`https://image.tmdb.org/t/p/w200/${topMovies.poster_path}`}
                   ></img>
                   <figcaption>{topMovies.title}</figcaption>
                 </figure>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -85,17 +87,19 @@ function Home() {
 
         <article>
           <h2>Top Rated TV <span>
-            <Link to="/MovieLis">view more</Link>
+            <Link to="/MovieList">view more</Link>
           </span></h2>
           <Swiper spaceBetween={50} slidesPerView={7}>
             {upcomingMovies.map((upcomingMovies) => (
               <SwiperSlide key={popularMovies.id}>
+                <Link to={`/Detail/movie2/${upcomingMovies.id}`}>
                 <figure>
                   <img
                     src={`https://image.tmdb.org/t/p/w200/${upcomingMovies.poster_path}`}
                   ></img>
                   <figcaption>{upcomingMovies.title}</figcaption>
                 </figure>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>
